@@ -1,3 +1,4 @@
+# Ethereum arbitrage bot for 1inch Aggregator
 This project is an advanced Ethereum-based SniperBot that interacts with the 1inch Aggregator. The SniperBot automatically identifies and executes optimal token swaps on decentralized exchanges (DEXs) using the 1inch API. The bot is designed to maximize profit by swiftly executing trades when specific market conditions are met.
 
 # Features
