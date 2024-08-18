@@ -265,8 +265,8 @@ async function main() {
   console.log("Tokens approved for router");
 
   // Example: Perform a snipe
-  const srcToken = "0x6B175474E89094C44Da98b954EedeAC495271d0F"; // DAI Token Address
-  const dstToken = "0xA0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"; // USDC Token Address
+  const srcToken = ethers.utils.getAddress("0x6B175474E89094C44Da98b954EedeAC495271d0F"); // DAI Token Address (checksummed)
+  const dstToken = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"; // Correctly checksummed USDC Token Address
   const amountIn = ethers.utils.parseUnits('1', 18);
   const minReturnAmount = ethers.utils.parseUnits('0.9', 18);
   
@@ -308,7 +308,7 @@ async function main() {
   console.log("Snipe performed");
 
   // Example: Withdraw tokens
-  const tokenAddress = "0x6B175474E89094C44Da98b954EedeAC495271d0F"; // DAI Token Address
+  const tokenAddress = ethers.utils.getAddress("0x6B175474E89094C44Da98b954EedeAC495271d0F"); // DAI Token Address (checksummed)
   const amountToWithdraw = ethers.utils.parseUnits('100', 18);
   const withdrawTx = await sniperBot.withdrawTokens(tokenAddress, amountToWithdraw);
   await withdrawTx.wait();
